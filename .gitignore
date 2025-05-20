@@ -1,5 +1,13 @@
+# Terraform рабочие директории и состояние
 **/.terraform/
 **/terraform.tfstate
 **/terraform.tfstate.backup
 *.tfstate
 *.tfstate.backup
+
+# ⚠️ Закрытые переменные (никогда не коммитим!)
+**/terraform.tfvars
+**/backend.tf
+
+# ⚠️ Если будут файлы с ключами
+*.key.json
