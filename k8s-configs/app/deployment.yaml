@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-nginx-app
+  labels:
+    app: test-nginx-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-nginx-app
+  template:
+    metadata:
+      labels:
+        app: test-nginx-app
+    spec:
+      containers:
+      - name: nginx
+        image: cr.yandex/crpndta336ndd7sejlna/test-nginx-app:latest
+        ports:
+        - containerPort: 80

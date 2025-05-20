@@ -1,0 +1,38 @@
+name: Build and Push Docker Image to YCR
+
+on:
+  push:
+    branches: ["main"]
+  tags:
+    - 'v*'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Authenticate with Yandex Cloud
+        run: |
+          echo "${{ secrets.YC_SERVICE_ACCOUNT_KEY }}" > key.json
+          yc config set service-account-key key.json
+          yc config set cloud-id ${{ secrets.YC_CLOUD_ID }}
+          yc config set folder-id ${{ secrets.YC_FOLDER_ID }}
+          yc container registry configure-docker
+
+      - name: Build and Push Image (latest)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker build -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/test-nginx-app:latest .
+          docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/test-nginx-app:latest
+
+      - name: Build and Push Image (tagged)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          docker build -t cr.yandex/${{ secrets.YC_REGISTRY_ID }}/test-nginx-app:${TAG_NAME} .
+          docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/test-nginx-app:${TAG_NAME}
