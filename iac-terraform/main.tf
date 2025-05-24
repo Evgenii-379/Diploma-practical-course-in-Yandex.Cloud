@@ -49,3 +49,6 @@ resource "yandex_resourcemanager_folder_iam_member" "sa_registry_pull" {
   role      = "container-registry.images.puller"
   member    = "serviceAccount:${yandex_iam_service_account.terraform_sa.id}"
 }
+
+
+# End
