@@ -1,0 +1,46 @@
+name: Terraform Apply for iac-terraform
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'iac-terraform/**'
+
+jobs:
+  terraform:
+    name: Terraform Init, Plan, Apply
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: iac-terraform
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Yandex Cloud CLI
+        run: |
+          echo "${{ secrets.YC_SERVICE_ACCOUNT_KEY_BASE64 }}" | base64 -d > key.json
+          yc config set service-account-key key.json
+          yc config set cloud-id ${{ secrets.YC_CLOUD_ID }}
+          yc config set folder-id ${{ secrets.YC_FOLDER_ID }}
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply
+        if: github.ref == 'refs/heads/main'
+        run: terraform apply -auto-approve tfplan
