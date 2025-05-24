@@ -2,9 +2,10 @@ name: Build and Push Docker Image to YCR
 
 on:
   push:
-    branches: ["main"]
-  tags:
-    - 'v*'
+    branches:
+      - main
+    tags:
+      - 'v*'
 
 jobs:
   build-and-push:
@@ -16,9 +17,14 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Install Yandex CLI
+        run: |
+          curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+          echo "${HOME}/yandex-cloud/bin" >> $GITHUB_PATH
+
       - name: Authenticate with Yandex Cloud
         run: |
-          echo "${{ secrets.YC_SERVICE_ACCOUNT_KEY }}" > key.json
+          echo "${{ secrets.YC_SERVICE_ACCOUNT_KEY_BASE64  }}" | base64 -d > key.json
           yc config set service-account-key key.json
           yc config set cloud-id ${{ secrets.YC_CLOUD_ID }}
           yc config set folder-id ${{ secrets.YC_FOLDER_ID }}

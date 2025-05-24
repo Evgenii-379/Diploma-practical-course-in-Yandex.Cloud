@@ -51,4 +51,4 @@ resource "yandex_resourcemanager_folder_iam_member" "sa_registry_pull" {
 }
 
 
-# End
+
