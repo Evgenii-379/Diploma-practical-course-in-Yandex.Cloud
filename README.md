@@ -143,8 +143,10 @@
 # **Выполнение дипломного практикума**
 
 
-Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью Terraform до CI/CD и мониторинга через Prometheus + Grafana.
-
+ Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью 
+Terraform до CI/CD и мониторинга через Prometheus + Grafana.
+В YC развёрнуто 4 VM: bastion, k8s-node1, k8s-node2, k8s-node3. Мастером является - k8s-node1. На bastion был скачен и Kubespray и с помощью него создан  Kubernetes кластер. Так же на бастионе 
+настроен файл inventory.ini для подключения к VM.
 ---
 
 ## Содержание
@@ -154,7 +156,7 @@
 - [3. Docker-приложение](#3-docker-приложение)
 - [4. Kubernetes конфигурации](#4-kubernetes-конфигурации)
 - [5. Мониторинг (Prometheus + Grafana)](#5-мониторинг-prometheus--grafana)
-- [6. Доступы и ссылки](#6-доступы-и-ссылки)
+- [6. Доступы и ссылки](#6-доступы-и-ссылки) 
 - [7. Скриншоты](#7-скриншоты)
 - [8. Ресурсы](#8-ресурсы)
 
@@ -166,9 +168,9 @@
 
 Структура папок:
 
-- iac-terraform/ — сервисный аккаунт, cloud, folder
-- infra/ — подсеть, NAT, security group
-- k8s_cluster/ — кластер Kubernetes (на базе Yandex Managed Service)
+- iac-terraform/ — сервисный аккаунт, назначение ролей,провайдер, аутенцификация через токен, cloud, folder
+- infra/ — VPC сеть с именем main-network, подсети в разных зонах доступности
+- k8s_cluster/ — кластер Kubernetes
 - s3_bucket/ — бакет для хранения стейт-файлов
 
 
@@ -178,6 +180,7 @@
 ---
 
 ## 2. CI/CD (GitHub Actions)
+
 
 **Репозиторий:** [`test-nginx-app`](https://github.com/Evgenii-379/test-nginx-app)
 
@@ -231,8 +234,8 @@ Workflow: `.github/workflows/docker-build.yml`
 
 | Назначение       | Ссылка / Комментарий                                                    |
 |------------------|-------------------------------------------------------------------------|
-| App              | `http://<IP>`                                                           |
-| Grafana          | `http://<IP>` логин: `admin`, пароль: `admin`                           |
+| App              | `http://158.160.180.8:31075/nginx`                                      |
+| Grafana          | `http://158.160.180.8:31075` логин: `admin`, пароль: `admin`            |
 | Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                  |
 | CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions) |
 | Grafana Dashboard| `Node Exporter Full` настроен                                           |
@@ -253,11 +256,17 @@ Workflow: `.github/workflows/docker-build.yml`
 
 ## 8. Ресурсы
 
-| Репозиторий        | Описание                                                                                                                  |
-|--------------------|--------------------------------------------|------------------------------------------------------------------------------|
-| [test-nginx-app](https://github.com/Evgenii-379/test-nginx-app) | Docker + GitHub Actions  |                        |                          |
-| [Diploma-practical-course-in-Yandex.Cloud](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud) | Terraform инфраструктура |
-| [k8s-configs](https://github.com/Evgenii-379/k8s-configs)       | Манифесты K8s            |                        |                          |
+Docker + GitHub Actions:
+
+[test-nginx-app](https://github.com/Evgenii-379/test-nginx-app) 
+ 
+Terraform инфраструктура:
+
+[Diploma-practical-course-in-Yandex.Cloud](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud) 
+
+Манифесты K8s:
+
+[k8s-configs](https://github.com/Evgenii-379/k8s-configs)
 
 ---
 
