@@ -163,12 +163,12 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 
 - Готовая структура проекта в локальном репозитории:
 
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20152136.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20152136.png)
 
 - Настройка файла inventory.ini на VM bastion для использования kubespray:
 
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145628.png)
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145547.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145628.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145547.png)
 
 
 ## 1. Инфраструктура (Terraform)
@@ -182,12 +182,12 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 - k8s_cluster/ — кластер Kubernetes
 - s3_bucket/ — бакет для хранения стейт-файлов
 
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20160103.png)
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-18%20223023.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20160103.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-18%20223023.png)
 
 - Роли для сервисных аккаунтов: 
 
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-19%20142559.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-19%20142559.png)
 
 
 
@@ -238,7 +238,7 @@ Workflow: `.github/workflows/docker-build.yml`
 - `service.yaml`
 - `ingress.yaml`
 
-- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
 
 
 ---
