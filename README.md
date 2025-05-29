@@ -143,12 +143,6 @@
 # **Выполнение дипломного практикума**
 
 
-- Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью 
-Terraform до CI/CD и мониторинга через Prometheus + Grafana.
-В YC развёрнуто 4 VM: bastion, k8s-node1, k8s-node2, k8s-node3. Мастером является - k8s-node1. На bastion был скачен и Kubespray и с помощью него создан  Kubernetes кластер. Так же на бастионе 
-настроен файл inventory.ini для подключения к VM.
-
-
 ## Содержание
 
 - [1. Инфраструктура (Terraform)](#1-инфраструктура-terraform)
@@ -158,9 +152,24 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 - [5. Мониторинг (Prometheus + Grafana)](#5-мониторинг-prometheus--grafana)
 - [6. Доступы и ссылки](#6-доступы-и-ссылки) 
 - [7. Скриншоты](#7-скриншоты)
-- [8. Ресурсы](#8-ресурсы)
+- [8. Репозитории](#8-репозитории)
 
 ---
+
+- Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью
+Terraform до CI/CD и мониторинга через Prometheus + Grafana.
+В YC развёрнуто 4 VM: bastion, k8s-node1, k8s-node2, k8s-node3. Мастером является - k8s-node1. На bastion был скачен Kubespray и с помощью него создан  Kubernetes кластер. Так же на бастионе
+настроен файл inventory.ini для подключения к VM.
+
+- Готовая структура проекта в локальном репозитории:
+
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20152136.png)
+
+- Настройка файла inventory.ini на VM bastion для использования kubespray:
+
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145628.png)
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20145547.png)
+
 
 ## 1. Инфраструктура (Terraform)
 
@@ -172,6 +181,13 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 - infra/ — VPC сеть с именем main-network, подсети в разных зонах доступности
 - k8s_cluster/ — кластер Kubernetes
 - s3_bucket/ — бакет для хранения стейт-файлов
+
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20160103.png)
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-18%20223023.png)
+
+- Роли для сервисных аккаунтов: 
+
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-19%20142559.png)
 
 
 
@@ -190,6 +206,8 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 - Использование секретов (`YC_REGISTRY_ID`, `KUBECONFIG`, `YC_SERVICE_ACCOUNT_KEY_BASE64`)
 
 Workflow: `.github/workflows/docker-build.yml`
+
+
 
 ---
 
@@ -220,6 +238,9 @@ Workflow: `.github/workflows/docker-build.yml`
 - `service.yaml`
 - `ingress.yaml`
 
+- ![scrin](https://github.com/https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
+
+
 ---
 
 ## 5. Мониторинг (Prometheus + Grafana)
@@ -232,13 +253,13 @@ Workflow: `.github/workflows/docker-build.yml`
 
 ## 6. Доступы и ссылки
 
-| Назначение       | Ссылка / Комментарий                                                    |
-|------------------|-------------------------------------------------------------------------|
-| App              | `http://158.160.180.8:31075/nginx`                                      |
-| Grafana          | `http://158.160.180.8:31075` логин: `admin`, пароль: `admin`            |
-| Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                  |
-| CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions) |
-| Grafana Dashboard| `Node Exporter Full` настроен                                           |
+| Назначение       | Ссылка / Комментарий                                                                      |
+|------------------|-------------------------------------------------------------------------------------------|
+| App              | [http://158.160.180.8:31075/nginx](http://158.160.180.8:31075/nginx)                      |
+| Grafana          | [http://158.160.180.8:31075](http://158.160.180.8:31075)  логин: `admin`, пароль: `admin` |
+| Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                                    |
+| CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions)                   |
+| Grafana Dashboard| `Node Exporter Full` настроен                                                             |
 
 ---
 
