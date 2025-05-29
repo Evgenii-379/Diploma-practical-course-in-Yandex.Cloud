@@ -142,3 +142,132 @@
 
 # **Выполнение дипломного практикума**
 
+
+Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью Terraform до CI/CD и мониторинга через Prometheus + Grafana.
+
+---
+
+## Содержание
+
+- [1. Инфраструктура (Terraform)](#1-инфраструктура-terraform)
+- [2. CI/CD (GitHub Actions)](#2-cicd-github-actions)
+- [3. Docker-приложение](#3-docker-приложение)
+- [4. Kubernetes конфигурации](#4-kubernetes-конфигурации)
+- [5. Мониторинг (Prometheus + Grafana)](#5-мониторинг-prometheus--grafana)
+- [6. Доступы и ссылки](#6-доступы-и-ссылки)
+- [7. Скриншоты](#7-скриншоты)
+- [8. Ресурсы](#8-ресурсы)
+
+---
+
+## 1. Инфраструктура (Terraform)
+
+**Репозиторий:** [`Diploma-practical-course-in-Yandex.Cloud`](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud)
+
+Структура папок:
+
+- iac-terraform/ — сервисный аккаунт, cloud, folder
+- infra/ — подсеть, NAT, security group
+- k8s_cluster/ — кластер Kubernetes (на базе Yandex Managed Service)
+- s3_bucket/ — бакет для хранения стейт-файлов
+
+
+
+Все модули были применены с нуля через `terraform init / plan / apply`.
+
+---
+
+## 2. CI/CD (GitHub Actions)
+
+**Репозиторий:** [`test-nginx-app`](https://github.com/Evgenii-379/test-nginx-app)
+
+Что реализовано:
+- Сборка и публикация Docker-образа в Yandex Container Registry
+- Развёртывание нового образа в кластер Kubernetes при пуше тега
+- Использование секретов (`YC_REGISTRY_ID`, `KUBECONFIG`, `YC_SERVICE_ACCOUNT_KEY_BASE64`)
+
+Workflow: `.github/workflows/docker-build.yml`
+
+---
+
+## 3. Docker-приложение
+
+**Репозиторий:** [`test-nginx-app`](https://github.com/Evgenii-379/test-nginx-app)
+
+Минимальное Nginx-приложение:
+
+- `Dockerfile`
+- `index.html`
+- `nginx.conf`
+
+Образы публикуются в:
+
+- cr.yandex/crpndta336ndd7sejlna/test-nginx-app:<tag>
+
+
+
+---
+
+## 4. Kubernetes конфигурации
+
+**Репозиторий:** [`k8s-configs`](https://github.com/Evgenii-379/k8s-configs)
+
+Файлы:
+- `deployment.yaml`
+- `service.yaml`
+- `ingress.yaml`
+
+---
+
+## 5. Мониторинг (Prometheus + Grafana)
+
+- Установлен через `monitoring/grafana-ingress.yaml`
+- Grafana доступна через Ingress
+- Node Exporter настроен
+
+---
+
+## 6. Доступы и ссылки
+
+| Назначение       | Ссылка / Комментарий                                                    |
+|------------------|-------------------------------------------------------------------------|
+| App              | `http://<IP>`                                                           |
+| Grafana          | `http://<IP>` логин: `admin`, пароль: `admin`                           |
+| Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                  |
+| CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions) |
+| Grafana Dashboard| `Node Exporter Full` настроен                                           |
+
+---
+
+## 7. Скриншоты
+
+Файлы находятся в папке [`Diploma-practical-course-in-Yandex.Cloud/images`](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/tree/main/images)
+
+Примеры:
+- Успешный GitHub Actions
+- Интерфейс Grafana
+- `kubectl logs`, `kubectl get` выводы
+- Состояние Docker Registry
+
+---
+
+## 8. Ресурсы
+
+| Репозиторий        | Описание                                                                                                                  |
+|--------------------|--------------------------------------------|------------------------------------------------------------------------------|
+| [test-nginx-app](https://github.com/Evgenii-379/test-nginx-app) | Docker + GitHub Actions  |                        |                          |
+| [Diploma-practical-course-in-Yandex.Cloud](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud) | Terraform инфраструктура |
+| [k8s-configs](https://github.com/Evgenii-379/k8s-configs)       | Манифесты K8s            |                        |                          |
+
+---
+
+##  Результат
+
+- Инфраструктура создаётся с нуля
+- Приложение доставляется через CI/CD
+- Наблюдаемость настроена через Grafana
+- Все этапы автоматизированы
+
+---
+
+
