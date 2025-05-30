@@ -157,7 +157,7 @@
 ---
 
 - Этот проект — результат выполнения дипломного практикума в Яндекс.Облаке. В рамках работы был реализован полный цикл DevOps-практик: от развертывания инфраструктуры с помощью
-Terraform до CI/CD и мониторинга через Prometheus + Grafana.
+Terraform до CI/CD и мониторинга через Prometheus + Grafana. Для создания я использовал рекомендуемый вариант: самостоятельная установка Kubernetes кластера.
 В YC развёрнуто 4 VM: bastion, k8s-node1, k8s-node2, k8s-node3. Мастером является - k8s-node1. На bastion был скачен Kubespray и с помощью него создан  Kubernetes кластер. Так же на бастионе
 настроен файл inventory.ini для подключения к VM.
 
@@ -217,11 +217,20 @@ Workflow: `.github/workflows/docker-build.yml`
 
 - Сборка образов :
 
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-25%20221819.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-25%20221904.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-25%20222051.png)
+
+- Сборка docker образа с тегом v1.0.6 :
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20231834.png) 
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20232317.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20231528.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20231457.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20233542.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-26%20234915.png)
 
 ---
 
@@ -239,6 +248,8 @@ Workflow: `.github/workflows/docker-build.yml`
 
 - cr.yandex/crpndta336ndd7sejlna/test-nginx-app:<tag>
 
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20151459.png)
 
 
 ---
@@ -274,6 +285,8 @@ Workflow: `.github/workflows/docker-build.yml`
 - Установлен через `monitoring/grafana-ingress.yaml`
 - Grafana доступна через Ingress
 - Node Exporter настроен
+
+
 
 ---
 
