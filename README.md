@@ -250,8 +250,8 @@ Workflow: `.github/workflows/docker-build.yml`
 
 
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20151459.png)
-
-
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
+- ![scrin](https://github.com/
 ---
 
 ## 4. Kubernetes конфигурации
@@ -286,6 +286,18 @@ Workflow: `.github/workflows/docker-build.yml`
 - Grafana доступна через Ingress
 - Node Exporter настроен
 
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-22%20115319.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20133850.png)
+
+- Дашборды с информацией о нодах:
+
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
 
 
 ---
@@ -314,7 +326,7 @@ Workflow: `.github/workflows/docker-build.yml`
 
 ---
 
-## 8. Ресурсы
+## 8. Репозитории :
 
 Docker + GitHub Actions:
 
