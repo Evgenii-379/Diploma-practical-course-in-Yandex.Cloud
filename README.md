@@ -251,7 +251,8 @@ Workflow: `.github/workflows/docker-build.yml`
 
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-21%20151459.png)
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
-- ![scrin](https://github.com/
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-30%20223825.png)
+
 ---
 
 ## 4. Kubernetes конфигурации
@@ -268,6 +269,8 @@ Workflow: `.github/workflows/docker-build.yml`
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-17%20234544.png)
 
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20141040.png)
 
 - Вывод команды 'kubectl get pods --all-namespaces' на VM bastion и на мастер ноде : 
 
@@ -289,15 +292,25 @@ Workflow: `.github/workflows/docker-build.yml`
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-22%20115319.png)
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20133850.png)
 
+
+Для вывода информации о нодах, я использовал готовые дашборды.
+
 - Дашборды с информацией о нодах:
 
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
-- ![scrin](https://github.com/
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20220835.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221021.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221033.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221049.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221103.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221118.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221317.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221335.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221402.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20221415.png)
 
 
 ---
@@ -344,7 +357,14 @@ Terraform инфраструктура:
 
 ##  Результат
 
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-27%20000447.png)
+
+
 - Инфраструктура создаётся с нуля
+- Автоматическая сборка Docker-образа при любом коммите
+- Автозагрузка в YCR
+- Автоматический деплой в Kubernetes при теге
+- Полностью рабочая GitHub Actions CI/CD-платформа
 - Приложение доставляется через CI/CD
 - Наблюдаемость настроена через Grafana
 - Все этапы автоматизированы
