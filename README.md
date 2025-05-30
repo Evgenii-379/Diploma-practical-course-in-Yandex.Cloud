@@ -207,7 +207,21 @@ Terraform до CI/CD и мониторинга через Prometheus + Grafana.
 
 Workflow: `.github/workflows/docker-build.yml`
 
+- Секреты в Github:
 
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20213502.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20213515.png)
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20213637.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-28%20213650.png)
+
+- Сборка образов :
+
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
+- ![scrin](https://github.com/
 
 ---
 
@@ -238,9 +252,20 @@ Workflow: `.github/workflows/docker-build.yml`
 - `service.yaml`
 - `ingress.yaml`
 
+- Развёртывание Kubernetes на 3-х нодах:
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-17%20234544.png)
 
 - ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-23%20135809.png)
 
+- Вывод команды 'kubectl get pods --all-namespaces' на VM bastion и на мастер ноде : 
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-18%20004624.png)
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-18%20005349.png)
+
+- Kubernetes секрет для доступа к YCR :
+
+- ![scrin](https://github.com/Evgenii-379/Diploma-practical-course-in-Yandex.Cloud/blob/main/images/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-05-19%20143747.png)
 
 ---
 
