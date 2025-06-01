@@ -4,10 +4,11 @@ metadata:
   name: test-nginx-service
   namespace: default
 spec:
+  type: NodePort
+  externalTrafficPolicy: Cluster
   selector:
     app: test-nginx-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: ClusterIP

@@ -317,13 +317,13 @@ Workflow: `.github/workflows/docker-build.yml`
 
 ## 6. Доступы и ссылки
 
-| Назначение       | Ссылка / Комментарий                                                                      |
-|------------------|-------------------------------------------------------------------------------------------|
-| App              | [http://158.160.180.8:31075/nginx](http://158.160.180.8:31075/nginx)                      |
-| Grafana          | [http://158.160.180.8:31075](http://158.160.180.8:31075)  логин: `admin`, пароль: `admin` |
-| Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                                    |
-| CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions)                   |
-| Grafana Dashboard| `Node Exporter Full` настроен                                                             |
+| Назначение       | Ссылка / Комментарий                                                                                 |
+|------------------|------------------------------------------------------------------------------------------------------|
+| App              | ['http://158.160.180.8:32461'](http://158.160.180.8:32461)  так же доступно и на других адресах nod  |
+| Grafana          | [http://158.160.180.8:31075](http://158.160.180.8:31075)  логин: `admin`, пароль: `admin`            |
+| Docker Image     | `cr.yandex/crpndta336ndd7sejlna/test-nginx-app:v1.0.6`                                               |
+| CI/CD Logs       | [GitHub Actions](https://github.com/Evgenii-379/test-nginx-app/actions)                              |
+| Grafana Dashboard| `Node Exporter Full` настроен                                                                        |
 
 ---
 
